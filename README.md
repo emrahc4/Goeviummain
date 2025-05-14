@@ -13,6 +13,7 @@ Yapay zeka destekli üretkenlik uygulaması
 - 🌍 Anlık Çeviri Aracı
 - 🧠 Yapay Zeka Destekli Görev Önerileri
 - 📊 Kullanıcı Dostu Arayüz
+- 🎤 Sesli Metin Yazma (Speech-to-Text) 
 
 ## 🛠️ Kullanılan Teknolojiler
 
@@ -60,6 +61,7 @@ Yapay zeka destekli üretkenlik uygulaması
 - Görevlere göre öneri üretimi
 - Günlük özet ve hatırlatma
 - Kullanıcıya özel planlama fikirleri
+- Sesli Metin Yazma
 
 ## 📸 Ekran Görüntüleri
 
