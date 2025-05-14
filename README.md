@@ -68,7 +68,6 @@ Yapay zeka destekli üretkenlik uygulaması
 Görevium ile ilgili görüşlerin, önerilerin ya da katkı sağlamak istediğin bir konu mu var? Bizimle iletişime geçmekten çekinme!
 
 - 📧 E-posta: [emrahhckr@gmail.com](mailto:emrahhckr@gmail.com)
-- 💬 GitHub Issues: [github.com/emrahc4/gorevium/issues](https://github.com/kullaniciadi/gorevium/issues)
 - 🧑‍💻 Geliştirici: [Emrah - LinkedIn](https://www.linkedin.com/in/emrah-%C3%A7ak%C4%B1r-052b422a1/) 
 
 ## 📸 Ekran Görüntüleri
