@@ -63,4 +63,4 @@ Yapay zeka destekli üretkenlik uygulaması
 
 ## 📸 Ekran Görüntüleri
 
-> (Buraya proje ekran görüntüleri ekleyebilirsin)
+> ![Image](https://github.com/user-attachments/assets/ea8a6348-522f-48d7-9408-cb0ae4fe0ad8)
