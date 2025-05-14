@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Görevium</title>
+  <meta name="description" content="">
+  <meta name="keywords" content="">
+
+  <!-- Favicons -->
+  <link href="assets/img/GöreviumLogo.png" rel="icon">
+  <link href="assets/img/GöreviumLogo.png" rel="apple-touch-icon">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Cardo:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/transition.min.css">
+
+  <!-- Main CSS File -->
+  <link href="assets/css/giriş.css" rel="stylesheet">
+  <style>
+    #gallery .row {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    flex-wrap: wrap;
+  }
+
+  .link-button, .action-button {
+    position: relative;
+    width: 100%;
+    max-width: 220px;
+    padding: 20px;
+    font-size: 18px;
+    border-radius: 50px;
+    background: #0f0c29; /* Koyu zemin rengi */
+    background: linear-gradient(45deg, #302b63, #24243e); /* Gradient arka plan */
+    color: white;
+    text-align: center;
+    border: none;
+    cursor: pointer;
+    overflow: hidden;
+    transition: all 0.4s ease;
+    z-index: 1;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3); /* Gölgelendirme */
+  }
+
+  /* Butonun arkasındaki ışık animasyonu */
+  .link-button::before, .action-button::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 300%;
+    height: 300%;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    animation: lightAnimation 2s infinite ease-in-out;
+    z-index: -1; /* Butonun arkasında olacak */
+  }
+
+  /* Butonun hover durumunda büyümesi ve ışığın etrafında hareket etmesi */
+  .link-button:hover, .action-button:hover {
+    transform: scale(1.1); /* Buton büyür */
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5); /* Hoverda gölgeyi arttırır */
+    filter: brightness(1.2); /* Işıklandırma artışı */
+  }
+
+  /* Işık patlamasının animasyonu */
+  @keyframes lightAnimation {
+    0% {
+      transform: translate(-50%, -50%) scale(1);
+      box-shadow: 0 0 30px rgba(255, 255, 255, 0.5);
+    }
+    50% {
+      transform: translate(-50%, -50%) scale(1.4);
+      box-shadow: 0 0 60px rgba(255, 255, 255, 0.8);
+    }
+    100% {
+      transform: translate(-50%, -50%) scale(1);
+      box-shadow: 0 0 30px rgba(255, 255, 255, 0.5);
+    }
+  }
+
+  /* Responsive Style */
+  @media (max-width: 768px) {
+    #gallery .row {
+      flex-direction: column;
+      gap: 10px;
+    }
+  }
+  </style>
+
+  
+</head>
+<div class="cursor"></div>
+<body class="index-page">
+
+  <header id="header" class="header d-flex align-items-center sticky-top">
+    <div class="container-fluid position-relative d-flex align-items-center justify-content-between">
+
+      <a href="index.html" class="logo d-flex align-items-center me-auto me-xl-0">
+    
+        
+        <h1 class="sitename">Görevium</h1>
+      </a>
+
+      <nav id="navmenu" class="navmenu">
+        <ul>
+          <li><a href="index.html" >Ana sayfa <br></a></li>
+          <li><a href="zamanyönetimi.html">Zaman Yönetimi</a></li>
+          <li><a href="BilgiMerkezi.html" >Bilgi Merkezi</a></li>
+          <li><a href="yapayZeka.html">Yapay zeka</a></li>
+          <li><a href="notlar.html">Notlar</a></li>
+          <li><a href="about.html">Hakımmızda</a></li>
+        </ul>
+        <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+      </nav>
+
+      <div class="header-social-links">
+        <a href="#" class="twitter"><i class="bi bi-twitter-x"></i></a>
+        <a href="#" class="facebook"><i class="bi bi-facebook"></i></a>
+        <a href="#" class="instagram"><i class="bi bi-instagram"></i></a>
+        <a href="#" class="linkedin"><i class="bi bi-linkedin"></i></a>
+      </div>
+
+    </div>
+  </header>
+
+  <main class="main">
+
+    <!-- Hero Section -->
+    <div class="banner" >
+     
+    <section id="hero" class="hero section">
+     
+        
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-lg-6 text-center" data-aos="fade-up" data-aos-delay="100">
+            <h2><span>Bilgi Merkezi ile </span><span class="underlight">Bilinçli Kararlar Alın</span>  geniş veri kaynaklarıyla doğru bilgiye hızlıca ulaşın.</span></h2
+          </div>
+        </div>
+      </div>
+      
+    
+  </div>
+    </section><!-- /Hero Section -->
+
+    <!-- Gallery Section -->
+   <section id="gallery" class="gallery section">
+  <div class="container">
+
+   
+
+    <div class="row justify-content-center">
+      <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
+        <button class="link-button" onclick="window.location.href='Wikipedia.html'">
+          <i class="bi bi-book-half"></i> Wikipedia
+        </button>
+      </div>
+      <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
+        <button class="link-button" onclick="window.location.href='havaDurumu.html';">
+          <i class="bi bi-cloud-sun"></i> Hava Durumu
+        </button>
+      </div>
+      <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
+        <button class="link-button" onclick="window.location.href='ceviri.html';">
+          <i class="bi bi-translate"></i> Çeviri
+        </button>
+      </div>
+      
+    </div>
+
+  </div>
+</section>
+
+  </main>
+
+  <footer id="footer" class="footer">
+
+    <div class="container">
+      <div class="copyright text-center ">
+        <p>© <span>Copyright</span> <strong class="px-1 sitename">Görevium</strong> <span>All Rights Reserved</span></p>
+      </div>
+      <div class="social-links d-flex justify-content-center">
+        <a href=""><i class="bi bi-twitter-x"></i></a>
+        <a href=""><i class="bi bi-facebook"></i></a>
+        <a href=""><i class="bi bi-instagram"></i></a>
+        <a href=""><i class="bi bi-linkedin"></i></a>
+      </div>
+      <div class="credits">
+       
+        Designed by Emrah Çakır</a> </a>
+      </div>
+    </div>
+
+  </footer>
+
+  <!-- Scroll Top -->
+  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Preloader -->
+  <div id="preloader">
+    <div class="line"></div>
+  </div>
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+
+  <!-- Main JS File -->
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/arkacanvas.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Görevium - Notlar</title>
+  <meta name="description" content="Görevium Not Yönetim Uygulaması">
+  <meta name="keywords" content="notlar, görevler, kanban, düzenleme, sürükle bırak">
+
+  <link href="assets/img/GöreviumLogo.png" rel="icon">
+  <link href="assets/img/GöreviumLogo.png" rel="apple-touch-icon">
+
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Cardo:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+<link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/transition.min.css">
+  <link rel="stylesheet" href="assets/css/wiki.css">
+
+  <link href="assets/css/giriş.css" rel="stylesheet">
+  <link href="assets/css/notes.css" rel="stylesheet">
+
+  <style>
+    /* Keep any necessary styles here, if not moved to giriş.css or notes.css */
+  </style>
+</head>
+
+<body class="index-page">
+
+  <header id="header" class="header d-flex align-items-center sticky-top">
+    <div class="container-fluid position-relative d-flex align-items-center justify-content-between">
+
+      <a href="index.html" class="logo d-flex align-items-center me-auto me-xl-0">
+        <h1 class="sitename">Görevium</h1>
+      </a>
+
+      <nav id="navmenu" class="navmenu">
+        <ul>
+          <li><a href="index.html">Ana sayfa <br></a></li>
+          <li><a href="zamanyönetimi.html">Zaman Yönetimi</a></li>
+          <li><a href="BilgiMerkezi.html">Bilgi Merkezi</a></li>
+          <li><a href="yapayZeka.html">Yapay zeka</a></li>
+          <li><a href="notlar.html" class="active">Notlar</a></li> 
+          <li><a href="about.html">Hakımmızda</a></li>
+        </ul>
+        <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+      </nav>
+
+      <div class="header-social-links">
+        <a href="#" class="twitter"><i class="bi bi-twitter-x"></i></a>
+        <a href="#" class="facebook"><i class="bi bi-facebook"></i></a>
+        <a href="#" class="instagram"><i class="bi bi-instagram"></i></a>
+        <a href="#" class="linkedin"><i class="bi bi-linkedin"></i></a>
+      </div>
+
+    </div>
+  </header>
+
+  <main class="main">
+    <section id="notes-section" class="notes-section section">
+      <div class="notes-container">
+        <div class="notes-header">
+          <h2>Notlarım</h2>
+          <p>Görevlerinizi düzenleyin, notlarınızı yönetin ve verimli olun.</p>
+        </div>
+
+        <div class="kanban-board" id="kanban-board">
+          </div>
+
+        <button class="add-column-button" id="add-column-button">Yeni Sütun Ekle</button>
+      </div>
+    </section><div class="modal-overlay" id="note-modal-overlay">
+      <div class="modal-content">
+        <h3 id="modal-title">Not Ekle</h3>
+        <form id="note-form">
+          <label for="note-title">Başlık:</label>
+          <input type="text" id="note-title" required>
+
+          <label for="note-content">İçerik:</label>
+          <div id="note-content" contenteditable="true" style="min-height: 120px; border: 1px solid #ced4da; border-radius: 6px; padding: 12px; margin-bottom: 20px; font-size: 1em;"></div>
+          
+          <div class="modal-buttons">
+            <button type="submit" class="save-button" id="save-note-button">Kaydet</button>
+            <button type="button" class="cancel-button" id="cancel-note-button">İptal</button>
+          </div>
+        </form>
+      </div>
+    </div>
+    </main>
+
+  <footer id="footer" class="footer">
+    <div class="container">
+      <div class="copyright text-center ">
+        <p>© <span>Copyright</span> <strong class="px-1 sitename">Görevium</strong> <span>All Rights Reserved</span></p>
+      </div>
+      <div class="social-links d-flex justify-content-center">
+        <a href=""><i class="bi bi-twitter-x"></i></a>
+        <a href=""><i class="bi bi-facebook"></i></a>
+        <a href=""><i class="bi bi-instagram"></i></a>
+        <a href=""><i class="bi bi-linkedin"></i></a>
+      </div>
+      <div class="credits">
+        Designed by Emrah Çakır
+      </div>
+    </div>
+  </footer>
+
+  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <div id="preloader">
+    <div class="line"></div>
+  </div>
+
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/notes.js"></script>
+
+</body>
+
+</html>

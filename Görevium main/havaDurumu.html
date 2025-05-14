@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Görevium</title>
+  <meta name="description" content="">
+  <meta name="keywords" content="">
+
+  <!-- Favicons -->
+  <link href="assets/img/GöreviumLogo.png" rel="icon">
+  <link href="assets/img/GöreviumLogo.png" rel="apple-touch-icon">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Cardo:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/transition.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <!-- Main CSS File -->
+  <link href="assets/css/giriş.css" rel="stylesheet">
+<style>
+
+/* Container */
+.containers {
+  width: 100%;
+    max-width: 600px;
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin: 0 auto; /* yatayda tam ortalar */
+    box-sizing: border-box; /* padding ve border dahil genişlik */
+    overflow: hidden;
+    max-height: 800px; /* max height belirleyin */
+    position: relative;
+
+    /* AŞAĞIDAKİLERİ KALDIRDIK: */
+    /* padding-bottom: 20px; */
+    /* margin-bottom: 0; */
+
+    padding-bottom: 0;
+    margin-bottom: 0;
+}
+html, body {
+  margin: 0;
+  padding: 0;
+}
+  
+
+
+/* Arama kutusu */
+.search-box {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.search-box input {
+    width: 80%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.search-box button {
+    width: 40px;
+    height: 40px;
+    background-color: #1e3a8a;
+    color: #fff;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 18px;
+}
+
+.search-box button:hover {
+    background-color: #375a7f;
+}
+
+.search-box i {
+    font-size: 20px;
+    color: #1e3a8a;
+}
+
+/* Hava durumu kutusu */
+.weather-box {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.weather-box img {
+    width: 60px;
+    height: 60px;
+}
+
+.weather-box .temperature {
+    font-size: 48px;
+    color: #1e3a8a;
+    font-weight: 700;
+}
+
+.weather-box .description {
+    font-size: 18px;
+    color: #555;
+    margin-top: 10px;
+}
+
+/* Hava durumu detayları */
+.weather-details {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.weather-details .humidity,
+.weather-details .wind {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    flex: 1;
+}
+
+.weather-details .humidity i,
+.weather-details .wind i {
+    font-size: 28px;
+    color: #1e3a8a;
+    margin-right: 10px;
+}
+
+.weather-details .text span {
+    font-size: 20px;
+    color: #1e3a8a;
+    font-weight: 600;
+}
+
+.weather-details .text p {
+    font-size: 14px;
+    color: #555;
+}
+
+/* Geçersiz şehir mesajı */
+.not-found {
+    display: none;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.not-found img {
+    width: 50px;
+    height: 50px;
+}
+
+.not-found p {
+    color: #d9534f;
+    font-size: 16px;
+    margin-top: 10px;
+}
+
+/* Animasyonlar */
+.fadeIn {
+    animation: fadeIn 1s forwards;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+
+</style>
+  
+</head>
+<div class="cursor"></div>
+<body class="index-page">
+
+  <header id="header" class="header d-flex align-items-center sticky-top">
+    <div class="container-fluid position-relative d-flex align-items-center justify-content-between">
+
+      <a href="index.html" class="logo d-flex align-items-center me-auto me-xl-0">
+    
+        
+        <h1 class="sitename">Görevium</h1>
+      </a>
+
+      <nav id="navmenu" class="navmenu">
+        <ul>
+          <li><a href="index.html" class="active">Ana sayfa <br></a></li>
+          <li><a href="zamanyönetimi.html">Zaman Yönetimi</a></li>
+          <li><a href="BilgiMerkezi.html">Bilgi Merkezi</a></li>
+          <li><a href="yapayZeka.html">Yapay zeka</a></li>
+          <li><a href="contact.html">Notlar</a></li>
+          <li><a href="about.html">Hakımmızda</a></li>
+          <li><a href="contact.html">İletişim</a></li>
+        </ul>
+        <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+      </nav>
+
+      <div class="header-social-links">
+        <a href="#" class="twitter"><i class="bi bi-twitter-x"></i></a>
+        <a href="#" class="facebook"><i class="bi bi-facebook"></i></a>
+        <a href="#" class="instagram"><i class="bi bi-instagram"></i></a>
+        <a href="#" class="linkedin"><i class="bi bi-linkedin"></i></a>
+      </div>
+
+    </div>
+  </header>
+
+  <main class="main">
+
+    <!-- Hero Section -->
+    <div class="banner" >
+     
+    
+
+    <!-- Gallery Section -->
+    <section id="gallery" class="gallery section">
+      <div class="containers">
+        <!-- Arama kısmı -->
+        <div class="search-box">
+            <i class="fa-solid fa-location-dot"></i>
+            <input type="text" id="cityInput" placeholder="Enter your location">
+            <button class="fa-solid fa-magnifying-glass" onclick="getWeather()"></button>
+        </div>
+    
+        <!-- Geçersiz şehir hatası -->
+        <div class="not-found">
+            <img src="images/404.png" alt="Not Found">
+            <p>Oops! Invalid location :/</p>
+        </div>
+    
+        <!-- Hava durumu kutusu -->
+        <div class="weather-box" id="weatherBox">
+            <img src="" id="weatherIcon" alt="Weather Icon">
+            <p class="temperature" id="temperature"></p>
+            <p class="description" id="description"></p>
+        </div>
+    
+        <!-- Hava durumu detayları -->
+        <div class="weather-details">
+            <div class="humidity">
+                <i class="fa-solid fa-water"></i>
+                <div class="text">
+                    <span id="humidity"></span>
+                    <p>nem </p>
+                </div>
+            </div>
+            <div class="wind">
+                <i class="fa-solid fa-wind"></i>
+                <div class="text">
+                    <span id="windSpeed"></span>
+                    <p> rüzgar hızı</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    </section><!-- /Gallery Section -->
+
+  </main>
+
+  <footer id="footer" class="footer">
+
+    <div class="container">
+      <div class="copyright text-center ">
+        <p>© <span>Copyright</span> <strong class="px-1 sitename">Görevium</strong> <span>All Rights Reserved</span></p>
+      </div>
+      <div class="social-links d-flex justify-content-center">
+        <a href=""><i class="bi bi-twitter-x"></i></a>
+        <a href=""><i class="bi bi-facebook"></i></a>
+        <a href=""><i class="bi bi-instagram"></i></a>
+        <a href=""><i class="bi bi-linkedin"></i></a>
+      </div>
+      <div class="credits">
+       
+        Designed by Emrah Çakır</a> </a>
+      </div>
+    </div>
+
+  </footer>
+
+  <!-- Scroll Top -->
+  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Preloader -->
+  <div id="preloader">
+    <div class="line"></div>
+  </div>
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+
+  <!-- Main JS File -->
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/arkacanvas.js"></script>
+  
+
+</body>
+<script>
+  const container = document.querySelector('.container');
+const search = document.querySelector('.search-box button');
+const weatherBox = document.querySelector('.weather-box');
+const weatherDetails = document.querySelector('.weather-details');
+const error404 = document.querySelector('.not-found');
+
+search.addEventListener('click', () => {
+
+    const APIKey = '9c78bb7a9e3ff9bcb2057019efcf0896';
+    const city = document.querySelector('.search-box input').value;
+
+    if (city === '')
+        return;
+
+    fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${APIKey}`)
+        .then(response => response.json())
+        .then(json => {
+
+            if (json.cod === '404') {
+                container.style.height = '400px';
+                weatherBox.style.display = 'none';
+                weatherDetails.style.display = 'none';
+                error404.style.display = 'block';
+                error404.classList.add('fadeIn');
+                return;
+            }
+
+            error404.style.display = 'none';
+            error404.classList.remove('fadeIn');
+
+            const image = document.querySelector('.weather-box img');
+            const temperature = document.querySelector('.weather-box .temperature');
+            const description = document.querySelector('.weather-box .description');
+            const humidity = document.querySelector('.weather-details .humidity span');
+            const wind = document.querySelector('.weather-details .wind span');
+
+            switch (json.weather[0].main) {
+                case 'Clear':
+                    image.src = 'images/clear.png';
+                    console.log("Resim yolu: images/clear.png"); // Konsola yazdır
+                    break;
+
+                case 'Rain':
+                    image.src = 'images/rain.png';
+                    console.log("Resim yolu: images/rain.png");
+                    break;
+
+                case 'Snow':
+                    image.src = 'images/snow.png';
+                    console.log("Resim yolu: images/snow.png");
+                    break;
+
+                case 'Clouds':
+                    image.src = 'images/cloud.png';
+                    console.log("Resim yolu: images/cloud.png");
+                    break;
+
+                case 'Haze':
+                    image.src = 'images/mist.png';
+                    console.log("Resim yolu: images/mist.png");
+                    break;
+
+                default:
+                     console.log("Varsayılan resim setlendi.");
+                    image.src = '';
+            }
+
+            temperature.innerHTML = `${parseInt(json.main.temp)}<span>°C</span>`;
+            description.innerHTML = `${json.weather[0].description}`;
+            humidity.innerHTML = `${json.main.humidity}%`;
+            wind.innerHTML = `${parseInt(json.wind.speed)}Km/h`;
+
+            weatherBox.style.display = '';
+            weatherDetails.style.display = '';
+            weatherBox.classList.add('fadeIn');
+            weatherDetails.classList.add('fadeIn');
+            container.style.height = '590px';
+
+
+        });
+
+
+});
+</script>
+
+</html>

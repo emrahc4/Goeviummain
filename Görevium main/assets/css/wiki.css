@@ -1,0 +1,138 @@
+/*--------------------------------------------------------------
+# Wikipedia Section (Saydam arka plan)
+--------------------------------------------------------------*/
+.wiki-search-box {
+    background-color: transparent; /* Saydam arka plan */
+    padding: 50px 0;
+}
+
+.wiki-search-box .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+.wiki-search-box header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.wiki-search-box header h2 {
+    font-size: 32px;
+    font-weight: 700;
+    color: var(--heading-color);
+    margin-bottom: 15px;
+    font-family: var(--default-font);
+}
+
+.wiki-search-box .search-box {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.wiki-search-box .search-box input[type="search"] {
+    font-size: 16px;
+    padding: 10px 20px;
+    width: 100%;
+    max-width: 600px;
+    border-radius: 30px;
+    border: 2px solid var(--default-color);
+    background-color: var(--surface-color);
+    color: var(--default-color);
+    transition: all 0.3s ease-in-out;
+}
+
+.wiki-search-box .search-box input[type="search"]:focus {
+    border-color: var(--accent-color);
+    outline: none;
+}
+
+.wiki-search-box header p {
+    font-size: 16px;
+    color: var(--default-color);
+    font-weight: 400;
+}
+
+.wiki-search-box .results {
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.wiki-search-box .results .result-item {
+    background-color: transparent; /* Saydam arka plan */
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease-in-out;
+}
+
+.wiki-search-box .results .result-item h3 {
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--heading-color);
+    margin-bottom: 10px;
+    font-family: var(--default-font);
+}
+
+.wiki-search-box .results .result-item p {
+    font-size: 14px;
+    color: var(--default-color);
+    line-height: 1.6;
+}
+
+.wiki-search-box .results .result-item a {
+    font-size: 14px;
+    color: var(--accent-color);
+    text-decoration: none;
+    transition: all 0.3s ease-in-out;
+}
+
+.wiki-search-box .results .result-item a:hover {
+    color: var(--default-color);
+}
+
+.wiki-search-box .results .result-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+}
+
+/*--------------------------------------------------------------
+# Load More Button
+--------------------------------------------------------------*/
+#wiki-search-box #load-more-container {
+    text-align: center;
+    margin-top: 20px;
+}
+
+#wiki-search-box #load-more {
+    background-color: var(--accent-color);
+    color: white;
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+
+#wiki-search-box #load-more:hover {
+    background-color: var(--accent-hover-color);
+    transform: translateY(-3px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/*--------------------------------------------------------------
+# Responsive Styles
+--------------------------------------------------------------*/
+@media (max-width: 768px) {
+    .wiki-search-box header h2 {
+        font-size: 28px;
+    }
+
+    .wiki-search-box .search-box input[type="search"] {
+        max-width: 100%;
+    }
+}

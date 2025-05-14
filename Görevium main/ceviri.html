@@ -1,0 +1,694 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Görevium</title>
+  <meta name="description" content="">
+  <meta name="keywords" content="">
+
+  <!-- Favicons -->
+  <link href="assets/img/GöreviumLogo.png" rel="icon">
+  <link href="assets/img/GöreviumLogo.png" rel="apple-touch-icon">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Cardo:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/transition.min.css">
+
+  <!-- Main CSS File -->
+  <link href="assets/css/giriş.css" rel="stylesheet">
+<style>
+  :root {
+  --primary-color: #356aff;
+  --bg-color: #f5f5f5;
+  --light-bg-color: #fff;
+  --text-color: #111116;
+  --light-text-color: #cdccd1;
+  --primary-text-color: #fff;
+}
+::-webkit-scrollbar {
+  width: 5px;
+}
+::-webkit-scrollbar-track {
+  border-radius: 30px;
+  background: #f1f1f1;
+}
+::-webkit-scrollbar-thumb {
+  border-radius: 30px;
+  background: var(--primary-color);
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--bg-color);
+}
+
+
+
+
+
+
+/* Animasyonlar */
+@keyframes slideIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+
+
+.containers {
+  position: relative;
+  width: 1200px;
+  max-width: 100%; /* Mobil uyumlu olması için max-width ekledim */
+  padding: 0 20px;
+  display: flex;
+  gap: 10px;
+  justify-content: center; /* Ortalamak için */
+  margin: 0 auto; /* Ortalamak için */
+}
+.containers .card {
+  flex: 1;
+  padding: 30px;
+  border-radius: 20px;
+  background-color: var(--light-bg-color);
+}
+.containers .card .from,
+.containers .card .to {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+.containers .card .from {
+  margin-right: 20px;
+}
+.containers .card .to {
+  margin-left: 20px;
+}
+.containers .card .heading {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--light-text-color);
+  white-space: nowrap;
+}
+.dropdown-container {
+  position: relative;
+  margin-bottom: 10px;
+  width: 100%;
+}
+.dropdown-container .dropdown-toggle {
+  display: flex;
+  align-items: center;
+  padding: 15px 20px;
+  border-radius: 30px;
+  background-color: var(--bg-color);
+  cursor: pointer;
+  transition: all 0.3s;
+}
+.dropdown-container .dropdown-toggle span {
+  flex: 1;
+  margin-left: 10px;
+}
+.dropdown-container .dropdown-toggle ion-icon {
+  font-size: 20px;
+  transition: transform 0.3s ease;
+}
+.dropdown-container.active .dropdown-toggle {
+  border-radius: 20px 20px 0 0;
+}
+.dropdown-container.active .dropdown-toggle ion-icon:last-child {
+  transform: rotate(180deg);
+}
+.dropdown-container .dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  height: 300px;
+  overflow: auto;
+  display: none;
+  padding: 20px;
+  z-index: 1;
+  list-style: none;
+  flex-direction: column;
+  background-color: var(--bg-color);
+  transition: all 1s;
+  border-radius: 0 0 20px 20px;
+}
+.dropdown-container .dropdown-menu::-webkit-scrollbar {
+  display: none;
+}
+.dropdown-container.active .dropdown-menu {
+  display: flex;
+}
+
+.dropdown-container .dropdown-menu li {
+  padding: 10px 20px;
+  border-radius: 20px;
+  cursor: pointer;
+  margin-bottom: 5px;
+  border-bottom: 1px solid var(--light-bg-color);
+  transition: all 0.3s ease;
+}
+.dropdown-container .dropdown-menu li:hover {
+  background-color: var(--light-bg-color);
+}
+.dropdown-container .dropdown-menu li.active {
+  color: var(--primary-text-color);
+  background-color: var(--primary-color);
+}
+.containers .text-area {
+  position: relative;
+}
+.containers textarea {
+  width: 100%;
+  padding: 20px;
+  margin: 10px 0;
+  background-color: transparent;
+  resize: none;
+  outline: none;
+  border: none;
+  color: var(--text-color);
+  font-size: 18px;
+  font-family: "Poppins", sans-serif;
+}
+.containers .text-area .chars {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  padding: 10px;
+  font-size: 0.8rem;
+  color: var(--light-text-color);
+}
+.containers .center {
+  position: relative;
+}
+.swap-position {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  cursor: pointer;
+  border: 5px solid var(--bg-color);
+  transition: all 0.3s ease;
+  color: var(--primary-text-color);
+  background-color: var(--primary-color);
+}
+.swap-position ion-icon {
+  font-size: 25px;
+}
+.swap-position:hover {
+  transform: translateX(-50%) scale(1.1);
+}
+.card-bottom {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  padding-top: 20px;
+  border-top: 2px solid var(--bg-color);
+}
+.card-bottom p {
+  margin-bottom: 20px;
+}
+.card-bottom label {
+  height: 50px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 0 20px;
+  cursor: pointer;
+  border-radius: 30px;
+  background-color: var(--bg-color);
+}
+.card-bottom label:hover {
+  color: var(--primary-text-color);
+  background-color: var(--primary-color);
+}
+.card-bottom span {
+  font-size: 12px;
+  pointer-events: none;
+}
+.card-bottom ion-icon {
+  font-size: 20px;
+}
+
+.card-bottom button {
+  height: 50px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 0 20px;
+  border-radius: 30px;
+  border: none;
+  outline: none;
+  color: var(--text-color);
+  cursor: pointer;
+  background-color: var(--bg-color);
+}
+.card-bottom button:hover {
+  color: var(--primary-text-color);
+  background-color: var(--primary-color);
+}
+
+.mode {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 1;
+}
+.toggle {
+  position: relative;
+  cursor: pointer;
+}
+.toggle-track {
+  width: 24px;
+  height: 50px;
+  border-radius: 30px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  padding: 3px 0;
+  justify-content: space-between;
+  border: 1px solid var(--light-text-color);
+  background-color: var(--light-bg-color);
+  transition: all 0.2s ease;
+}
+.toggle-checkbox {
+  display: none;
+}
+.toggle-thumb {
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: var(--primary-color);
+  transition: all 0.5s;
+}
+.toggle input:checked ~ .toggle-thumb {
+  transform: translateY(25px);
+}
+.toggle img {
+  width: 20px;
+  height: 20px;
+}
+
+/* media quiries */
+@media (max-width: 800px) {
+  .containers {
+    width: 100%;
+    margin-top: 20px;
+    flex-direction: column;
+  }
+  .containers .card {
+    width: 100%;
+  }
+  .containers .card .from {
+    margin-right: 0;
+  }
+  .containers .card .to {
+    margin-left: 0;
+  }
+  .containers .card .from,
+  .containers .card .to {
+    flex-direction: column;
+  }
+
+  .swap-position {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  .swap-position:hover {
+    transform: translate(-50%, -50%) scale(1.1);
+  }
+  .swap-position ion-icon {
+    transform: rotate(90deg);
+  }
+}
+
+</style>
+  
+</head>
+<div class="cursor"></div>
+<body class="index-page">
+
+  <header id="header" class="header d-flex align-items-center sticky-top">
+    <div class="container-fluid position-relative d-flex align-items-center justify-content-between">
+
+      <a href="index.html" class="logo d-flex align-items-center me-auto me-xl-0">
+    
+        
+        <h1 class="sitename">Görevium</h1>
+      </a>
+
+      <nav id="navmenu" class="navmenu">
+        <ul>
+          <li><a href="index.html" class="active">Ana sayfa <br></a></li>
+          <li><a href="zamanyönetimi.html">Zaman Yönetimi</a></li>
+          <li><a href="BilgiMerkezi.html">Bilgi Merkezi</a></li>
+          <li><a href="yapayZeka.html">Yapay zeka</a></li>
+          <li><a href="notlar.html">Notlar</a></li>
+          <li><a href="about.html">Hakımmızda</a></li>
+        </ul>
+        <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+      </nav>
+
+      <div class="header-social-links">
+        <a href="#" class="twitter"><i class="bi bi-twitter-x"></i></a>
+        <a href="#" class="facebook"><i class="bi bi-facebook"></i></a>
+        <a href="#" class="instagram"><i class="bi bi-instagram"></i></a>
+        <a href="#" class="linkedin"><i class="bi bi-linkedin"></i></a>
+      </div>
+
+    </div>
+  </header>
+
+  <main class="main">
+
+    <!-- Hero Section -->
+    <div class="banner" >
+     
+    <section id="hero" class="hero section">
+     
+        
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-lg-6 text-center" data-aos="fade-up" data-aos-delay="100">
+            <h2><span>Hoş Geldiniz! </span><span class="underlight">Görevium</span> ile Hedeflerini belirle, zamanını yönet, potansiyelini ortaya çıkar.</span></h2
+          </div>
+        </div>
+      </div>
+      
+    
+  </div>
+    </section><!-- /Hero Section -->
+
+    <!-- Gallery Section -->
+    <section id="gallery" class="gallery section">
+      <div class="containers">
+        <!-- Input Wrapper -->
+        <div class="card input-wrapper">
+          <div class="from">
+            <span class="heading">From :</span>
+            <div class="dropdown-container" id="input-language">
+              <div class="dropdown-toggle">
+                <ion-icon name="globe-outline"></ion-icon>
+                <span class="selected" data-value="auto">Auto Detect</span>
+                <ion-icon name="chevron-down-outline"></ion-icon>
+              </div>
+              <ul class="dropdown-menu">
+                <li class="option active">Açılır Menü Öğesi 1</li>
+                <li class="option">Açılır Menü Öğesi 2</li>
+              </ul>
+            </div>
+          </div>
+          <div class="text-area">
+            <textarea
+              id="input-text"
+              cols="30"
+              rows="10"
+              placeholder="Metninizi buraya girin"
+            ></textarea>
+            <div class="chars"><span id="input-chars">0</span> / 5000</div>
+          </div>
+          <div class="card-bottom">
+            <p>Veya belgenizi seçin!</p>
+            <label for="upload-document">
+              <span id="upload-title">Dosya Seç</span>
+              <ion-icon name="cloud-upload-outline"></ion-icon>
+              <input type="file" id="upload-document" hidden />
+            </label>
+          </div>
+        </div>
+  
+        <!-- Swap Button -->
+        <div class="center">
+          <div class="swap-position">
+            <ion-icon name="swap-horizontal-outline"></ion-icon>
+          </div>
+        </div>
+  
+        <!-- Output Wrapper -->
+        <div class="card output-wrapper">
+          <div class="to">
+            <span class="heading">To :</span>
+            <div class="dropdown-container" id="output-language">
+              <div class="dropdown-toggle">
+                <ion-icon name="globe-outline"></ion-icon>
+                <span class="selected" data-value="en">English</span>
+                <ion-icon name="chevron-down-outline"></ion-icon>
+              </div>
+              <ul class="dropdown-menu">
+                <li class="option active">Açılır Menü Öğesi 1</li>
+                <li class="option">Açılır Menü Öğesi 2</li>
+              </ul>
+            </div>
+          </div>
+          <textarea
+            id="output-text"
+            cols="30"
+            rows="10"
+            placeholder="Çevrilmiş metin burada görünecek"
+            disabled
+          ></textarea>
+          <div class="card-bottom">
+            <p>Belge olarak indir!</p>
+            <button id="download-btn">
+              <span>İndirmek</span>
+              <ion-icon name="cloud-download-outline"></ion-icon>
+            </button>
+          </div>
+        </div>
+      </div>
+    
+    </section><!-- /Gallery Section -->
+
+  </main>
+
+  <footer id="footer" class="footer">
+
+    <div class="container">
+      <div class="copyright text-center ">
+        <p>© <span>Copyright</span> <strong class="px-1 sitename">Görevium</strong> <span>All Rights Reserved</span></p>
+      </div>
+      <div class="social-links d-flex justify-content-center">
+        <a href=""><i class="bi bi-twitter-x"></i></a>
+        <a href=""><i class="bi bi-facebook"></i></a>
+        <a href=""><i class="bi bi-instagram"></i></a>
+        <a href=""><i class="bi bi-linkedin"></i></a>
+      </div>
+      <div class="credits">
+       
+        Designed by Emrah Çakır</a> </a>
+      </div>
+    </div>
+
+  </footer>
+
+  <!-- Scroll Top -->
+  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Preloader -->
+  <div id="preloader">
+    <div class="line"></div>
+  </div>
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+
+  <!-- Main JS File -->
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/arkacanvas.js"></script>
+  <script src="assets/js/languages.js"></script>
+  <script
+      type="module"
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"
+    ></script>
+
+</body>
+<script>
+  const dropdowns = document.querySelectorAll(".dropdown-container"),
+  inputLanguageDropdown = document.querySelector("#input-language"),
+  outputLanguageDropdown = document.querySelector("#output-language");
+
+function populateDropdown(dropdown, options) {
+  dropdown.querySelector("ul").innerHTML = "";
+  options.forEach((option) => {
+    const li = document.createElement("li");
+    const title = option.name + " (" + option.native + ")";
+    li.innerHTML = title;
+    li.dataset.value = option.code;
+    li.classList.add("option");
+    dropdown.querySelector("ul").appendChild(li);
+  });
+}
+
+populateDropdown(inputLanguageDropdown, languages);
+populateDropdown(outputLanguageDropdown, languages);
+
+dropdowns.forEach((dropdown) => {
+  dropdown.addEventListener("click", (e) => {
+    dropdown.classList.toggle("active");
+  });
+
+  dropdown.querySelectorAll(".option").forEach((item) => {
+    item.addEventListener("click", (e) => {
+      //remove active class from current dropdowns
+      dropdown.querySelectorAll(".option").forEach((item) => {
+        item.classList.remove("active");
+      });
+      item.classList.add("active");
+      const selected = dropdown.querySelector(".selected");
+      selected.innerHTML = item.innerHTML;
+      selected.dataset.value = item.dataset.value;
+      translate();
+    });
+  });
+});
+document.addEventListener("click", (e) => {
+  dropdowns.forEach((dropdown) => {
+    if (!dropdown.contains(e.target)) {
+      dropdown.classList.remove("active");
+    }
+  });
+});
+
+const swapBtn = document.querySelector(".swap-position"),
+  inputLanguage = inputLanguageDropdown.querySelector(".selected"),
+  outputLanguage = outputLanguageDropdown.querySelector(".selected"),
+  inputTextElem = document.querySelector("#input-text"),
+  outputTextElem = document.querySelector("#output-text");
+
+swapBtn.addEventListener("click", (e) => {
+  const temp = inputLanguage.innerHTML;
+  inputLanguage.innerHTML = outputLanguage.innerHTML;
+  outputLanguage.innerHTML = temp;
+
+  const tempValue = inputLanguage.dataset.value;
+  inputLanguage.dataset.value = outputLanguage.dataset.value;
+  outputLanguage.dataset.value = tempValue;
+
+  //swap text
+  const tempInputText = inputTextElem.value;
+  inputTextElem.value = outputTextElem.value;
+  outputTextElem.value = tempInputText;
+
+  translate();
+});
+
+function translate() {
+  const inputText = inputTextElem.value;
+  const inputLanguage =
+    inputLanguageDropdown.querySelector(".selected").dataset.value;
+  const outputLanguage =
+    outputLanguageDropdown.querySelector(".selected").dataset.value;
+  const url = `https://translate.googleapis.com/translate_a/single?client=gtx&sl=${inputLanguage}&tl=${outputLanguage}&dt=t&q=${encodeURI(
+    inputText
+  )}`;
+  fetch(url)
+    .then((response) => response.json())
+    .then((json) => {
+      console.log(json);
+      outputTextElem.value = json[0].map((item) => item[0]).join("");
+    })
+    .catch((error) => {
+      console.log(error);
+    });
+}
+inputTextElem.addEventListener("input", (e) => {
+  //limit input to 5000 characters
+  if (inputTextElem.value.length > 5000) {
+    inputTextElem.value = inputTextElem.value.slice(0, 5000);
+  }
+  translate();
+});
+
+const uploadDocument = document.querySelector("#upload-document"),
+  uploadTitle = document.querySelector("#upload-title");
+
+uploadDocument.addEventListener("change", (e) => {
+  const file = e.target.files[0];
+  if (
+    file.type === "application/pdf" ||
+    file.type === "text/plain" ||
+    file.type === "application/msword" ||
+    file.type ===
+      "application/vnd.openxmlformats-officedocument.wordprocessingml.document"
+  ) {
+    uploadTitle.innerHTML = file.name;
+    const reader = new FileReader();
+    reader.readAsText(file);
+    reader.onload = (e) => {
+      inputTextElem.value = e.target.result;
+      translate();
+    };
+  } else {
+    alert("Please upload a valid file");
+  }
+});
+
+const downloadBtn = document.querySelector("#download-btn");
+
+downloadBtn.addEventListener("click", (e) => {
+  const outputText = outputTextElem.value;
+  const outputLanguage =
+    outputLanguageDropdown.querySelector(".selected").dataset.value;
+  if (outputText) {
+    const blob = new Blob([outputText], { type: "text/plain" });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement("a");
+    a.download = `translated-to-${outputLanguage}.txt`;
+    a.href = url;
+    a.click();
+  }
+});
+
+const darkModeCheckbox = document.getElementById("dark-mode-btn");
+
+darkModeCheckbox.addEventListener("change", () => {
+  document.body.classList.toggle("dark");
+});
+
+const inputChars = document.querySelector("#input-chars");
+
+inputTextElem.addEventListener("input", (e) => {
+  inputChars.innerHTML = inputTextElem.value.length;
+});
+
+</script>
+
+</html>

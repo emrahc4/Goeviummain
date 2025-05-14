@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Görevium</title>
+  <meta name="description" content="">
+  <meta name="keywords" content="">
+
+  <!-- Favicons -->
+  <link href="assets/img/GöreviumLogo.png" rel="icon">
+  <link href="assets/img/GöreviumLogo.png" rel="apple-touch-icon">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Cardo:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/transition.min.css">
+
+  <!-- Main CSS File -->
+  <link href="assets/css/giriş.css" rel="stylesheet">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    outline: none;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+
+
+.containers{
+    width: 400px;
+    background: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+}
+
+.containers .header{
+    font-size: 22px;
+    text-align: center;
+    font-weight: bold;
+    margin-bottom: 14px;
+}
+
+.containers .settings p{
+    font-size: 14px;
+    font-weight: 500;
+    color: #a5a5a5;
+    margin-bottom: 12px;
+}
+
+.containers .settings select{
+    width: 100%;
+    padding: 6px 10px;
+    border: 1px solid #a5a5a5;
+    border-radius: 5px;
+}
+
+.containers .separator{
+    width: 100%;
+    height: 1px;
+    background: #a5a5a5;
+    opacity: 0.5;
+    margin: 20px 0;
+}
+
+.btn{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2px;
+    margin-bottom: 20px;
+    height: 42px;
+    width: 100%;
+    border: none;
+    border-radius: 5px;
+    font-size: 14px;
+    cursor: pointer;
+    color: #fff;
+    background: #303f9f;
+}
+
+.btn i{
+    font-size: 24px;
+}
+
+.btn:disabled{
+    background: #a5a5a5;
+    cursor: not-allowed;
+}
+
+.containers .record .bx-spin{
+    display: none;
+}
+
+.containers .record.recording .bx-spin{
+    display: block;
+}
+
+.containers .record.recording i{
+    display: none;
+}
+
+.containers .result{
+    width: 100%;
+    border: 1px solid #a5a5a5;
+    height: 120px;
+    overflow-y: scroll;
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 10px;
+    margin: 10px 0 20px;
+    color: #333;
+    font-weight: 500;
+}
+
+.containers .result p{
+    display: inline;
+    margin-left: 3px;
+    color: #a5a5a5;
+}
+
+.buttons{
+    display: flex;
+    gap: 20px;
+}
+
+.buttons .btn{
+    margin-bottom: 10px;
+}
+.container-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Ekranın tamamını kaplaması için */
+    align-items: flex-start; /* <-- yukarı hizalama */
+    padding-top: 0; /* her ihtimale karşı */
+}
+
+</style>
+  
+</head>
+<div class="cursor"></div>
+<body class="index-page">
+
+  <header id="header" class="header d-flex align-items-center sticky-top">
+    <div class="container-fluid position-relative d-flex align-items-center justify-content-between">
+
+      <a href="index.html" class="logo d-flex align-items-center me-auto me-xl-0">
+    
+        
+        <h1 class="sitename">Görevium</h1>
+      </a>
+
+      <nav id="navmenu" class="navmenu">
+        <ul>
+          <li><a href="index.html" class="active">Ana sayfa <br></a></li>
+          <li><a href="zamanyönetimi.html">Zaman Yönetimi</a></li>
+          <li><a href="BilgiMerkezi.html">Bilgi Merkezi</a></li>
+          <li><a href="yapayZeka.html">Yapay zeka</a></li>
+          <li><a href="notlar.html">Notlar</a></li>
+          <li><a href="about.html">Hakımmızda</a></li>
+        </ul>
+        <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+      </nav>
+
+      <div class="header-social-links">
+        <a href="#" class="twitter"><i class="bi bi-twitter-x"></i></a>
+        <a href="#" class="facebook"><i class="bi bi-facebook"></i></a>
+        <a href="#" class="instagram"><i class="bi bi-instagram"></i></a>
+        <a href="#" class="linkedin"><i class="bi bi-linkedin"></i></a>
+      </div>
+
+    </div>
+  </header>
+
+  <main class="main">
+
+    <!-- Hero Section -->
+    <div class="banner" > 
+     
+    
+    
+    <div class="container-wrapper">
+    <!-- Gallery Section -->
+    <section id="gallery" class="gallery section">
+     
+      <div class="containers">
+        <p class="header"> KonuşYaz</p>
+        <div class="settings">
+            <div class="language">
+                <p>Dil :</p>
+                <select id="language"></select>
+            </div>
+        </div>
+        <div class="separator"></div>
+        <button class="btn record">
+            <div class="icon">
+                <i class='bx bx-microphone'></i>
+                <i class='bx bx-loader bx-spin'></i>
+            </div>
+            <p> Başla</p>
+        </button>
+
+        <p>Sonuç :</p>
+        <div class="result" spellcheck="false">
+            <p class="resultText"></p>
+        </div>
+
+        <div class="separator"></div>
+
+        <div class="buttons">
+            <button class="btn clear">
+              Temizle
+            </button>
+            <button class="btn download" disabled>İndirmek</button>
+        </div>
+
+    </div>
+
+</div>
+
+    </section><!-- /Gallery Section -->
+
+  </main>
+
+  <footer id="footer" class="footer">
+
+    <div class="container">
+      <div class="copyright text-center ">
+        <p>© <span>Copyright</span> <strong class="px-1 sitename">Görevium</strong> <span>All Rights Reserved</span></p>
+      </div>
+      <div class="social-links d-flex justify-content-center">
+        <a href=""><i class="bi bi-twitter-x"></i></a>
+        <a href=""><i class="bi bi-facebook"></i></a>
+        <a href=""><i class="bi bi-instagram"></i></a>
+        <a href=""><i class="bi bi-linkedin"></i></a>
+      </div>
+      <div class="credits">
+       
+        Designed by Emrah Çakır</a> </a>
+      </div>
+    </div>
+
+  </footer>
+
+  <!-- Scroll Top -->
+  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Preloader -->
+  <div id="preloader">
+    <div class="line"></div>
+  </div>
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+
+  <!-- Main JS File -->
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/arkacanvas.js"></script>
+  <script src="assets/js/speeklanguages.js"></script>
+
+</body>
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const recognition = new webkitSpeechRecognition() || new SpeechRecognition();
+    const languageSelect = document.getElementById('language');
+    const resultContainer = document.querySelector('.result p.resultText');
+    const startListeningButton = document.querySelector('.btn.record');
+    const recordButtonText = document.querySelector('.btn.record p');
+    const clearButton = document.querySelector('.btn.clear');
+    const downloadButton = document.querySelector('.btn.download');
+
+    let recognizing = false;
+
+    languages.forEach(language => {
+        const option = document.createElement('option');
+        option.value = language.code;
+        option.text = language.name;
+        languageSelect.add(option);
+    });
+
+    recognition.continuous = true;
+    recognition.interimResults = true;
+    recognition.lang = languageSelect.value;
+
+    languageSelect.addEventListener('change', () => {
+        recognition.lang = languageSelect.value;
+    });
+
+    startListeningButton.addEventListener('click', toggleSpeechRecognition);
+
+    clearButton.addEventListener('click', clearResults);
+
+    downloadButton.disabled = true;
+
+    recognition.onresult = (event) => {
+        const result = event.results[event.results.length - 1][0].transcript;
+        resultContainer.textContent = result;
+        downloadButton.disabled = false;
+    };
+
+    recognition.onend = () => {
+        recognizing = false;
+        startListeningButton.classList.remove('recording');
+        recordButtonText.textContent = 'Start Listening';
+    };
+
+    downloadButton.addEventListener('click', downloadResult);
+
+    function toggleSpeechRecognition() {
+        if (recognizing) {
+            recognition.stop();
+        } else {
+            recognition.start();
+        }
+
+        recognizing = !recognizing;
+        startListeningButton.classList.toggle('recording', recognizing);
+        recordButtonText.textContent = 'Stop Listening';
+    }
+
+    function clearResults() {
+        resultContainer.textContent = '';
+        downloadButton.disabled = true;
+    }
+
+    function downloadResult() {
+        const resultText = resultContainer.textContent;
+
+        const blob = new Blob([resultText], { type: 'text/plain' });
+        const url = URL.createObjectURL(blob);
+
+        const a = document.createElement('a');
+        a.href = url;
+        a.download = 'Your-Text.txt';
+        a.style.display = 'none';
+
+        document.body.appendChild(a);
+        a.click();
+
+        document.body.removeChild(a);
+        URL.revokeObjectURL(url);
+    }
+
+});
+</script>
+
+</html>

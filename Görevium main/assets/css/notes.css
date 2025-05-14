@@ -1,0 +1,436 @@
+/* General Notes Section Styling (Minimalist - Transparent Background) */
+.notes-section {
+    padding: 80px 0; /* More vertical padding */
+    background-color: transparent; /* Arka planı saydam yaptık */
+    font-family: 'Inter', sans-serif;
+    color: #444; /* Slightly darker text for better readability */
+    min-height: 90vh; /* Ensure section takes up more vertical space */
+    display: flex;
+    justify-content: center;
+    align-items: flex-start; /* Align content to top */
+}
+
+.notes-container {
+    max-width: 1400px; /* Even wider container for more spacious layout */
+    margin: 0 auto;
+    padding: 40px; /* Generous padding */
+    background-color: rgba(255, 255, 255, 0.9); /* Beyaz, %90 opak */
+    border-radius: 14px; /* Slightly more rounded corners */
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.05); /* Very subtle, soft shadow */
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center content inside the container */
+    backdrop-filter: blur(10px); /* İsteğe bağlı: Arka plana hafif bir blur efekti */
+}
+
+/* ... Diğer CSS Kuralları (Kanban Board, Column, Note vb.) AYNI KALACAK ... */
+
+.notes-header {
+    text-align: center;
+    margin-bottom: 60px; /* More space below header */
+    color: #010101;
+}
+
+.notes-header h2 {
+    color: #000000; /* Darker title for contrast */
+    font-size: 3em; /* Larger, impactful title */
+    font-weight: 600; /* Slightly less bold for minimalism */
+    margin-bottom: 15px;
+    letter-spacing: -0.02em; /* Tighter letter spacing */
+}
+
+.notes-header p {
+    font-size: 1.2em;
+    color: #777; /* Muted descriptive text */
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 1.6;
+}
+
+/* Kanban Board Styling (Minimalist) */
+.kanban-board {
+    display: flex;
+    gap: 30px; /* More space between columns */
+    overflow-x: auto;
+    padding-bottom: 25px; /* Space for scrollbar and visual comfort */
+    align-items: flex-start; /* Align columns to the top */
+    width: 100%; /* Take full width of parent container */
+}
+
+.kanban-column {
+    flex-shrink: 0;
+    width: 340px; /* Slightly wider columns for more content */
+    background-color: rgba(247, 248, 250, 0.85); /* Açık gri, %85 opak */
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.03); /* Very subtle column shadow */
+    padding: 25px; /* More padding */
+    display: flex;
+    flex-direction: column;
+    min-height: 400px; /* Generous minimum height */
+    transition: all 0.3s ease; /* Smooth transitions */
+    position: relative;
+    border: 1px solid #ebebeb; /* Very light border for definition */
+    backdrop-filter: blur(5px); /* İsteğe bağlı: Arka plana hafif bir blur efekti */
+}
+
+.kanban-column:hover {
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.06); /* Slightly more pronounced on hover */
+}
+
+.kanban-column.drag-over {
+    background-color: rgba(239, 242, 245, 0.9); /* Slightly darker highlight, %90 opak */
+    box-shadow: 0 8px 20px rgba(108, 92, 231, 0.1); /* Accent shadow */
+    border: 1px dashed #9b8aef; /* Muted dashed accent border */
+}
+
+.column-header {
+    font-size: 1.5em;
+    font-weight: 500; /* Less bold */
+    color: #333;
+    margin-bottom: 20px; /* More space */
+    padding: 10px 0; /* Flat design */
+    text-align: left; /* Align text left for cleaner look */
+    cursor: pointer;
+    user-select: none;
+    position: relative;
+    display: flex; /* For aligning text and button */
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #e0e0e0; /* Subtle separator */
+}
+
+.column-header span { /* For the editable text part */
+    flex-grow: 1;
+    padding-right: 10px; /* Space for delete button */
+}
+
+.column-header:focus {
+    outline: none;
+    box-shadow: none; /* Remove box-shadow on focus for minimalist */
+    border-bottom-color: #6c5ce7; /* Highlight border on focus */
+}
+
+.column-delete-btn {
+    background: none;
+    border: none;
+    color: #b0b0b0; /* Muted gray for delete */
+    font-size: 1.2em; /* Slightly larger icon */
+    cursor: pointer;
+    padding: 5px;
+    opacity: 0; /* Hidden by default */
+    transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.column-header:hover .column-delete-btn {
+    opacity: 1; /* Show on hover */
+    transform: scale(1.05);
+    color: #888;
+}
+.column-delete-btn:hover {
+    color: #dc3545; /* Red on hover for emphasis */
+}
+
+.add-note-button {
+    background-color: #6c5ce7;
+    color: white;
+    border: none;
+    padding: 12px 18px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1.05em;
+    margin-top: 25px;
+    transition: background-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+    width: 100%;
+    font-weight: 500;
+    text-transform: uppercase; /* Subtle style */
+    letter-spacing: 0.03em;
+}
+
+.add-note-button:hover {
+    background-color: #5a49cb;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(108, 92, 231, 0.2);
+}
+
+/* Note Card Styling (Minimalist) */
+.note-card {
+    background-color: rgba(255, 255, 255, 0.95); /* Beyaz, %95 opak */
+    border: 1px solid #e5e5e5; /* Very light border */
+    border-radius: 8px;
+    padding: 20px; /* More padding inside notes */
+    margin-bottom: 15px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.02); /* Very subtle shadow */
+    cursor: grab;
+    transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+    position: relative;
+    backdrop-filter: blur(3px); /* İsteğe bağlı: Arka plana hafif bir blur efekti */
+}
+
+.note-card:active {
+    cursor: grabbing;
+}
+
+.note-card.dragging {
+    opacity: 0.7;
+    transform: scale(0.98);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+}
+
+.note-card h4 {
+    font-size: 1.2em;
+    font-weight: 600;
+    margin-bottom: 12px;
+    color: #333;
+}
+
+.note-card .note-content {
+    font-size: 0.95em;
+    color: #555;
+    line-height: 1.6;
+    min-height: 40px;
+    word-wrap: break-word;
+    white-space: pre-wrap;
+}
+
+.note-card .note-content img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin-top: 15px;
+    border-radius: 5px;
+}
+.note-card .note-content a {
+    color: #6c5ce7;
+    text-decoration: none;
+    font-weight: 500;
+}
+.note-card .note-content a:hover {
+    text-decoration: underline;
+}
+
+.note-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    margin-top: 20px; /* More space */
+}
+
+.note-actions button {
+    background: none;
+    border: none;
+    color: #999; /* Muted gray for actions */
+    cursor: pointer;
+    font-size: 1em;
+    transition: color 0.2s ease, transform 0.2s ease;
+    padding: 5px;
+}
+
+.note-actions button:hover {
+    color: #6c5ce7; /* Accent color on hover */
+    transform: translateY(-1px);
+}
+
+.note-actions .delete-btn {
+    color: #dc3545;
+}
+
+.note-actions .delete-btn:hover {
+    color: #c82333;
+    transform: translateY(-1px);
+}
+
+/* Note Edit Modal/Form (Minimalist - Transparent Background) */
+.modal-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(240, 242, 245, 0.7); /* Daha şeffaf overlay */
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    animation: fadeInOverlay 0.3s forwards;
+    backdrop-filter: blur(10px); /* Arka plana blur efekti */
+}
+
+.modal-content {
+    background-color: rgba(255, 255, 255, 0.95); /* Daha opak modal içeriği */
+    padding: 40px; /* More padding */
+    border-radius: 12px;
+    box-shadow: 0 15px 50px rgba(0, 0, 0, 0.08); /* Daha hafif gölge */
+    width: 90%;
+    max-width: 600px; /* Wider modal */
+    transform: translateY(-30px);
+    animation: slideInModal 0.3s forwards;
+    border: 1px solid #eee; /* Subtle border */
+    backdrop-filter: blur(8px); /* Arka plana blur efekti */
+}
+
+.modal-content h3 {
+    font-size: 2em; /* Larger title */
+    color: #333;
+    margin-bottom: 30px;
+    text-align: center;
+    font-weight: 600;
+}
+
+.modal-content label {
+    display: block;
+    font-weight: 500;
+    margin-bottom: 10px;
+    color: #555;
+}
+
+.modal-content input
+.modal-content #note-content {
+    width: calc(100% - 28px); /* Adjust for padding */
+    padding: 14px;
+    margin-bottom: 25px;
+    border: 1px solid #e0e0e0; /* Lighter border */
+    border-radius: 8px;
+    font-size: 1.05em;
+    color: #333; /* Dark text for visibility */
+    background-color: #ffffff;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.modal-content input:focus,
+.modal-content #note-content:focus {
+    outline: none;
+    border-color: #6c5ce7;
+    box-shadow: 0 0 0 3px rgba(108, 92, 231, 0.15); /* Muted focus highlight */
+}
+
+.modal-content #note-content {
+    min-height: 180px; /* Taller content area */
+    resize: vertical;
+    white-space: pre-wrap;
+}
+
+.modal-buttons {
+    display: flex;
+    justify-content: flex-end;
+    gap: 15px;
+    margin-top: 30px;
+}
+
+.modal-buttons button {
+    padding: 12px 28px; /* Larger buttons */
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1.05em;
+    font-weight: 500;
+    transition: background-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.modal-buttons .save-button {
+    background-color: #6c5ce7; /* Accent color for save */
+    color: white;
+}
+
+.modal-buttons .save-button:hover {
+    background-color: #5a49cb;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(108, 92, 231, 0.2);
+}
+
+.modal-buttons .cancel-button {
+    background-color: #e0e0e0; /* Muted gray for cancel */
+    color: #555;
+}
+
+.modal-buttons .cancel-button:hover {
+    background-color: #d5d5d5;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+/* Button to Add New Column (Minimalist - Transparent Background) */
+.add-column-button {
+    background-color: rgba(240, 240, 240, 0.7); /* Daha açık, yarı saydam */
+    color: #555;
+    border: 1px dashed #ccc; /* Dashed border for "add new" feel */
+    padding: 15px 25px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1.05em;
+    margin-top: 40px; /* More space */
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    max-width: 280px; /* Wider button */
+    transition: background-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+    backdrop-filter: blur(3px); /* Arka plana blur efekti */
+}
+
+.add-column-button:hover {
+    background-color: rgba(230, 230, 230, 0.8);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    border-color: #a0a0a0; /* Darker dashed border on hover */
+}
+
+/* Responsive adjustments (Minimalist - Transparent Background) */
+@media (max-width: 768px) {
+    .notes-container {
+        padding: 25px;
+    }
+
+    .notes-header h2 {
+        font-size: 2.4em;
+    }
+
+    .notes-header p {
+        font-size: 1em;
+    }
+
+    .kanban-board {
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+    }
+
+    .kanban-column {
+        width: 95%;
+        max-width: 380px; /* Limit max width for better stacking */
+        min-height: 350px;
+        padding: 20px;
+    }
+
+    .column-header {
+        font-size: 1.3em;
+    }
+
+    .note-card {
+        padding: 15px;
+    }
+
+    .modal-content {
+        padding: 30px;
+        max-width: 450px;
+    }
+
+    .modal-content input
+    .modal-content #note-content {
+        padding: 12px;
+        font-size: 1em;
+    }
+
+    .modal-buttons button {
+        padding: 10px 20px;
+        font-size: 1em;
+    }
+
+    .add-column-button {
+        padding: 12px 20px;
+        font-size: 1em;
+        max-width: 220px;
+    }
+}
